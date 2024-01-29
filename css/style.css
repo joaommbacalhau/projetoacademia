@@ -1,0 +1,525 @@
+:root{
+    --brand: #B91f33;
+    --primary: #101417;
+    --contrast: #E0E34C;
+    --gray-light: #E1E1E1;
+    --gray-meium: #666666;
+    --white: #ffffff;
+    --black: #000000;
+    --radius: 3px;
+
+    /*cor padrão do swiper*/
+    --swiper-theme-color: var(--brand)
+}
+
+#academia, #contato{
+    scroll-margin-top: 170px;
+}
+
+#planos{
+    scroll-margin-top: 150px;
+}
+
+*{
+    font-family: 'Teko', sans-serif; /*fonte do repositório do google*/
+    text-transform: uppercase;/* converte o texto para maiscúlo*/
+}
+
+html{
+    /*faz com que a navegação em âncora fique suave*/
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0; /* retirando a margem padrão do body*/
+    background-color: var(--primary); /*cor total do site*/
+    overflow-x: hidden;/*esconde a barra de rolagem horixontal*/
+}
+
+img{
+    display: block;
+}
+
+a{
+    text-decoration: none;/* retirando o sublinhado dos links*/
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+p{
+    color: var(--gray-light);
+    line-height: 120%;
+    font-size: 18px;
+}
+
+h2{
+    font-size: 40px;
+    color: var(--white);
+    line-height: 100%;
+}
+
+.bg-popup{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bg-popup-close{
+    display: none;
+}
+
+.popup{
+    position: relative;
+}
+.popup img{
+    max-width: 100%;
+}
+
+.close{
+    color: var(--black);
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 84px;
+    top: 7px;
+}
+
+
+
+.container{
+    width: 100%;
+    max-width: 1170px;/*largura máxima - para aplicar nos tabletes e celolares, tivemos que compenssar pela razão de termos de acrescentar o peding 15 + wading 100%*/
+    padding-left: 15px;/*para aplicar nos tabletes e celolares*/
+    padding-right: 15px;/*para aplicar nos tabletes e celolares*/
+    box-sizing: border-box;
+    /*centralizar o container*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100%; /*largura*/
+    height: auto; /* altura*/
+
+    /*espaçamento interno*/
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: sticky;/* fixa o cabeçalho*/
+    top: 0;/* para começar a rolar no 0*/
+    z-index: 1000;
+}
+
+/*formatando o container que está dentro do header*/
+.header .container{
+    /*FLEXBOX: Conjunto de propriedades CSS para organização de LAYOUY*/
+    display: flex;
+    align-items: center;/*alinhamento vertical*/
+    justify-content: space-between;/* alinhamento horizontal*/
+}
+
+.menu a{
+    color: var(--white);
+    margin-left: 111px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/*ao passar o mouse nos links do menu*/
+.menu a:hover{
+    color: var(--brand);
+}
+
+/*conteudo veio na biblioteca foi nesseçário retirar */
+.bx-wrapper {
+    box-shadow: none; 
+    border: none;
+}
+
+.bg-1{
+    background-image: url(../img/background.jpg);
+}
+
+.bg-2{
+    background-image: url(../img/background-2.jpg);
+}
+
+.bg-3{
+    background-image: url(../img/background-3.jpg);
+}
+
+.hero-section{
+    background-size: cover;/*evita a repetição da imagem*/
+    background-position: center center;/* posiçao do centro da imagem*/
+    /* VH - view height unidade de medida baseada no navegador */
+    /*calc() função para realizar um cálculo*/
+    height: calc(100vh - 100px); 
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--gray-light);
+
+
+}
+
+.hero-section h1{
+    font-size: 96px;
+    line-height: 90%;
+}
+
+.hero-section p{
+    font-size: 24px;
+}
+
+.btn{
+    color: var(--white);
+    background-color: var(--brand);
+    font-size: 18px;
+
+    /*padding-top: 13px;
+    padding-right: 60px;
+    padding-bottom: 9px;
+    padding-left: 60px;*/
+    padding: 9px 60px 5px 60px; /*aumentando o botão - top right bottom left, no Sentido dos ponteiros do relógio*/  
+    border-radius: 3px;
+    display: inline-block;
+    transition: 0.2s;
+    border: 2px solid transparent;/* foi necessário para igualar o tamanho dos dotões*/
+    cursor: pointer;/*cursor do mouse fica todo igual*/
+}
+
+.btn:hover{
+    transform: scale(0.95);
+}
+
+.btn-outline{
+    background-color: transparent;
+    border: 2px solid var(--brand);
+}
+
+.nossa-academia{
+    display: flex;
+    align-items: center;
+    column-gap: 24px; /* espaço entre as colunas do flex*/
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.faca-parte{
+    background-color: var(--gray-light);
+    
+}
+
+.faca-parte .content{
+    max-width: 850px;/* alteração para celolar*/
+    width: calc(100% - 200px);
+}
+
+.faca-parte h2{
+    color: var(--primary)
+}
+
+.faca-parte p{
+    color: var(--gray-meium);
+}
+
+.faca-parte .container{
+    position: relative;/* servir de referencia para o psicion: absulote*/
+    padding-top: 37px;
+    padding-bottom: 37px;
+}
+
+.faca-parte .image{
+    /*Posiçâo em relaçâo ao elemento PAI (desde que ele tenha position),
+    caso contrário será relação ao body*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
+.nossos-planos{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.flex-cards{
+    display: flex;
+    column-gap: 24px;
+}
+
+.card{
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: var(--gray-light);*/
+    border: solid 1px var(--gray-light);
+    border-radius: var(--radius);
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.30);
+}
+
+.card-destaque{
+    border-color: var(--contrast);
+    position: relative;
+}
+
+.card-destaque > span{
+    color: var(--contrast) !important;/* important - serve para ser o ultimo a ler*/
+
+}
+/* Pai > filho{} todos os descendentes diretos do pai*/
+.card h3, .card > span{
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card ul{
+    color: var(--gray-light);
+    text-align: left;
+    font-size: 18px;
+    padding: 0;
+    list-style-position: inside;
+   
+}
+
+.card .btn{
+    display: block;/* serve para dar comprimento aos btn na area de planos*/
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(45deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.selo {
+    animation: rotate 8s infinite linear;
+    color: var(--black);
+    background-color: var(--contrast);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* fazer um circulo*/
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 90%;
+    
+}
+
+.fale-conosco{
+    display: flex;
+    column-gap: 24px;
+    margin-bottom: 100px;
+}
+
+.contato input, textarea{
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: solid 1px var(--gray-light);
+    border-radius: var(--radius);
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--white);
+    box-sizing: border-box;
+}
+
+.contato textarea{
+    height: 140px;
+    padding-top: 10px;
+}
+
+.footer{
+    background-color: var(--brand);
+    padding: 14px 194px 10px 194px;
+    text-align: center;
+}
+
+.footer p{
+    margin: 0;/* para zerar as margens do paragrafo pelo motivo do pading dar largura*/
+    color: var(--white);
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.social img:hover{
+    filter: contrast(120);
+}
+
+        /*MRDIA QUERIES*/
+
+/*Para larguras de até 1200*/
+@media (max-width: 1200px){
+
+    h2{
+        font-size: 32px;
+    }
+
+    .header{
+        background-color: var(--black);
+    }
+
+    .menu{
+        /*display: none;*/
+        /*opacity: 0;
+        pointer-events: none;*/
+        transform: translateX(-100%);
+        background-color: var(--black);
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 100px);
+        transition: 0.3s ease-in-out;
+    }
+    
+    .menu-open{
+        /*display: block;*/
+        /*opacity: 1;
+        pointer-events: all;*/
+        transform: translateX(0);
+    }
+
+    .menu a{
+        display: block;
+        margin-left: 0;
+        padding: 30px 15px 25px 15px;
+        border-bottom: 1px solid var(--primary);
+    }
+
+    /*ao clicar*/
+    .menu a:active{
+        background-color: var(--contrast);
+    }
+
+    .bar{
+        width: 40px;
+        height: 3px;
+        background-color: var(--white);
+        margin-bottom: 3px;
+        /* ou*/
+        /*
+        .btn-menu
+        display: flex;
+        flex-direction: colum;
+        row-gap: 3px;*/
+        transition: 0.3s;
+    }
+
+    /*bar que for o primeiro filho*/
+    .x .bar:first-child{
+        transform: rotate(45deg) translate(7px, 4px);
+    }
+    /* bar que for o filho de número 2*/
+    .x .bar:nth-child(2){
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    /*bar que for o último filho*/
+    .x .bar:last-child{
+        transform: rotate(-45deg) translate(4px, -2px);
+    }
+
+    .hero-section{
+        height: 420px;
+    }
+
+    /*.hero-section .container{
+        padding-left: 50px;
+        padding-right: 50px;
+    }*/
+
+    .swiper-button-prev, .swiper-button-next{
+        display: none;
+    }
+
+    .hero-section h1{
+        font-size: 36px;
+    }
+    .hero-section p{
+        font-size: 18px;
+    }
+
+    .nossa-academia img{
+        width: 400px;
+    }
+
+    .flex-cards{
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+
+    .card{
+        max-width: 400px;
+    }
+    
+    .fale-conosco{
+        flex-direction: column;
+        row-gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .fale-conosco iframe{
+        width: 100%;
+    }
+
+    .footer{
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px){
+    .nossa-academia{
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    .nossa-academia img{
+        max-width: 100%;
+    }
+
+}
+
+@media(max-width: 580px){
+    .faca-parte .image{
+        display: none;
+    }
+
+    .faca-parte .content{
+        width: 100%;
+    }
+}
+
